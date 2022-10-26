@@ -1,42 +1,101 @@
 #div1 {
-    width: 40%;
-    margin: 20px;
+    width: 1200px;
+    margin-top: 10px;
+    margin-left: 20px;
 }
 #left {
     width: 300px;
     float: left;
 }
 #right {
-    width: 200px;
+    width: 400px;
     float: right;
     text-align: right;
+}
+h1 {
+    text-align: center;
+    font-size: 100px;
+}
+h2 {
+    font-size: 40px;
 }
 input {
     width: 300px;
     height: 40px;
     font-size: 20px;
+    outline: none;
 }
 button {
     width: 100px;
-    height: 39px;
+    height: 40px;
     font-size: 24px;
     background-color: #00a600;
     color: white;
     border-radius: 7px;
     border: none;
 }
-table {
+#table2 {
     width: 100%;
-    text-align: left;
+    text-align: center;
+    font-size: 24px;
+}
+#table1 {
+    width: 100%;
+    font-size: 24px;
+}
+.row1, .row2, .row3 {
+    border: 1px solid white;
+    border-collapse: collapse;
+    background-color: bisque;
 }
 th {
-    width: 330px;
+    background-color: white !important;
+}
+.row1 {
+    width: 50%;
+}
+.row2 {
+    width: 10%;
+}
+.row3 {
+    width: 20%;
+}
+.row4 {
+    width: 10%;
+}
+.row2 {
+    width: 10%;
 }
 #div2 {
     width: 30%;
-    height: 200px;
-    margin-left: 35%;
-    margin-right: 25%;
-    margin-top: 300px;
+    height: 240px;
+    margin-left: 67%;
+    margin-top: 0px;
     position: fixed;
+}
+#div3 {
+    width: 30%;
+    height: 400px;
+    margin-left: 67%;
+    margin-top: 235px;
+    position: fixed;
+    text-align: center;
+    padding: 20px;
+}
+.money {
+    border-radius: 5px;
+    width: 230px;
+    height: 35px;
+    margin: 10px;
+    background-color: white;
+    font-size: 30px;
+}
+.table3 {
+    border-radius: 5px;
+    width: 320px;
+    height: 50px;
+    background-color: #b4b4b4;
+}
+#div4 {
+    width: 100%;
 }

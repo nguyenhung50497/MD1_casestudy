@@ -15,19 +15,75 @@
 </head>
 <body>
 
+    <h1>Quản lý chi tiêu</h1>
+    <hr>
+    <div id="div2"></div>
+    <div id="div3">
+        <h3>Tổng tiền đã chi tiêu</h3>
+        <table class="table3" id="table3" align="center">
+            <tr>
+                <td><h3 class="money" id="spent"></h3></td>
+                <td><h3 style="margin: 10px">VND</h3></td>
+            </tr>
+        </table>
+        <h3>Hạn mức còn lại</h3>
+        <table class="table3" id="table4" align="center">
+            <tr>
+                <td><h3 class="money" id="still"></h3></td>
+                <td><h3 style="margin: 10px">VND</h3></td>
+            </tr>
+        </table>
+        <h3 id="alert"></h3>
+        <h3>Số tiền đã tiết kiệm được</h3>
+        <table class="table3" id="table5" align="center">
+            <tr>
+                <td><h3 class="money" id="saveMoney"></h3></td>
+                <td><h3 style="margin: 10px">VND</h3></td>
+            </tr>
+        </table>
+        <h3 id="alert1"></h3>
+        <br>
+        <button style="width: 150px; height: 50px" onclick="settlement()">Quyết toán</button>
+    </div>
     <div id="div1">
-        <h1>Add New Product</h1>
-        <input type="text" name="product" id="product" placeholder="New Product">
-        <button onclick="addProduct()">Add</button>
+        <table id="table1">
+            <tr>
+                <th><h3>Lương tháng</h3></th>
+                <th><h3>Hạn mức chi tiêu tháng</h3></th>
+            </tr>
+            <tr>
+                <th><input type="number" name="salary" id="salary" placeholder="Tiền lương" oninput="salarySubmit()"></th>
+                <th><input type="number" name="spending" id="spending" placeholder="Số tiền chi tiêu"
+                           oninput="spendingSubmit()"></th>
+            </tr>
+        </table>
+        <br>
+        <h3>Mục đã chi tiêu</h3>
+        <div id="div4">
+            <input type="text" name="product" id="product" placeholder="Nội dung chi tiêu" style="width: 50%;">
+            <span>&nbsp;</span>
+            <input type="number" name="amounts" id="amounts" placeholder="Số lượng" style="width: 15%;">
+            <span>&nbsp;</span>
+            <input type="number" name="money" id="money" placeholder="Số tiền đã chi" style="width: 22%;">
+            <span>&nbsp;</span>
+            <button onclick="addProduct()"> Thêm </button>
+        </div>
         <hr>
         <br>
-        <h1>Display All Product</h1>
+        <h3 align="center">Bảng thống kê chi tiêu</h3>
         <br>
-        <h2 id="left">Product Name</h2>
-        <h2 id="right"><span id="amounts"></span> Products</h2>
-        <table id="resultproduct"></table>
+        <h3 id="right"><span id="amountsSpending"></span> Mục đã chi tiêu</h3>
+        <table id="table2">
+            <thead>
+                <th class="row1">Nội dung chi tiêu</th>
+                <th class="row2">Số lượng</th>
+                <th class="row3">Số tiền (/1)</th>
+                <th class="row4"></th>
+                <th class="row5"></th>
+            </thead>
+            <tbody id="resultproduct"></tbody>
+        </table>
     </div>
-    <div id="div2"></div>
 
 </body>
 </html>
