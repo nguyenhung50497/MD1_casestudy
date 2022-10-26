@@ -1,0 +1,42 @@
+#div1 {
+    width: 40%;
+    margin: 20px;
+}
+#left {
+    width: 300px;
+    float: left;
+}
+#right {
+    width: 200px;
+    float: right;
+    text-align: right;
+}
+input {
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+}
+button {
+    width: 100px;
+    height: 39px;
+    font-size: 24px;
+    background-color: #00a600;
+    color: white;
+    border-radius: 7px;
+    border: none;
+}
+table {
+    width: 100%;
+    text-align: left;
+}
+th {
+    width: 330px;
+}
+#div2 {
+    width: 30%;
+    height: 200px;
+    margin-left: 35%;
+    margin-right: 25%;
+    margin-top: 300px;
+    position: fixed;
+}
