@@ -12,6 +12,7 @@ function spendingSubmit() {
 }
 function displayProduct() {
     let str = '';
+
     for (let i = 0; i < lists.length; i++) {
         str += `<tr>
                 <td class="row1">${lists[i]}</td>
@@ -38,6 +39,7 @@ function addProduct() {
     document.querySelector('#product').value = '';
     document.querySelector('#money').value = '';
     document.querySelector('#amounts').value = '';
+    sumMoney = 0;
     for (let i=0; i<moneys.length; i++) {
         sumMoney += (moneys[i] * amounts[i]);
     }
@@ -51,7 +53,8 @@ function addProduct() {
         document.querySelector('#alert').innerHTML = '';
     }
     document.querySelector('#alert1').innerHTML = '';
-    document
+    document.querySelector('#saveMoney').innerHTML = 0;
+    document.querySelector('#div2').innerHTML = '';
 }
 
 function editProduct(inDex) {
@@ -89,6 +92,7 @@ function deleteProduct(inDex) {
     lists.splice(inDex, 1);
     displayProduct();
     document.querySelector('#amountsSpending').innerHTML = lists.length;
+    document.querySelector('#div2').innerHTML = '';
 }
 function settlement() {
     if (salary-sumMoney <= 0) {
@@ -100,5 +104,17 @@ function settlement() {
         document.querySelector('#saveMoney').innerHTML = salary - sumMoney;
         document.querySelector('#alert1').innerHTML = '';
     }
+    document.querySelector('#div2').innerHTML = '';
+}
+function resetBoard() {
+    document.querySelector('#resultproduct').innerHTML = '';
+    document.querySelector('#spent').innerHTML = '';
+    document.querySelector('#still').innerHTML = '';
+    document.querySelector('#alert').innerHTML = '';
+    document.querySelector('#saveMoney').innerHTML = '';
+    document.querySelector('#alert1').innerHTML = '';
+    document.querySelector('#salary').value = '';
+    document.querySelector('#spending').value = '';
+    document.querySelector('#div2').innerHTML = '';
 }
 
