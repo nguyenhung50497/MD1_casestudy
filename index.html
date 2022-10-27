@@ -15,6 +15,13 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
+<style>
+    body {
+        background-image: url("images/hinhnen.jpg");
+        background-size: cover;
+        font-family: 'Mali', cursive;
+    }
+</style>
 <body>
 <div id="all">
     <header>
@@ -24,70 +31,77 @@
     <nav></nav>
     <aside id="aright">
         <div id="rightdowm">
-        <h3>Tổng tiền đã chi tiêu</h3>
-        <table class="table3" id="table3" align="center">
-            <tr>
-                <td><h3 class="money" id="spent"></h3></td>
-                <td><h3 style="margin: 10px">VND</h3></td>
-            </tr>
-        </table>
-        <h3>Hạn mức còn lại</h3>
-        <table class="table3" id="table4" align="center">
-            <tr>
-                <td><h3 class="money" id="still"></h3></td>
-                <td><h3 style="margin: 10px">VND</h3></td>
-            </tr>
-        </table>
-        <h3 id="alert"></h3>
-        <h3>Số tiền tiết kiệm</h3>
-        <table class="table3" id="table5" align="center">
-            <tr>
-                <td><h3 class="money" id="saveMoney"></h3></td>
-                <td><h3 style="margin: 10px">VND</h3></td>
-            </tr>
-        </table>
-        <h3 id="alert1"></h3>
-        <button style="width: 150px; height: 50px" onclick="settlement()">Quyết toán</button>
+            <h3>Tổng tiền đã chi tiêu</h3>
+            <table class="table3" id="table3" align="center">
+                <tr>
+                    <td><h3 class="money" id="spent"></h3></td>
+                    <td><h3 style="margin: 10px">VND</h3></td>
+                </tr>
+            </table>
+            <h3>Hạn mức còn lại</h3>
+            <table class="table3" id="table4" align="center">
+                <tr>
+                    <td><h3 class="money" id="still"></h3></td>
+                    <td><h3 style="margin: 10px">VND</h3></td>
+                </tr>
+            </table>
+            <h3 id="alert"></h3>
+            <h3>Số tiền tiết kiệm</h3>
+            <table class="table3" id="table5" align="center">
+                <tr>
+                    <td><h3 class="money" id="saveMoney"></h3></td>
+                    <td><h3 style="margin: 10px">VND</h3></td>
+                </tr>
+            </table>
+            <h3 id="alert1"></h3>
+            <br>
+            <button style="width: 150px; height: 50px" onclick="settlement()">Quyết toán</button>
         </div>
         <div id="right"></div>
     </aside>
     <div id="content">
-            <table id="table1">
-                <tr>
-                    <th><h3>Lương tháng</h3></th>
-                    <th><h3>Hạn mức chi tiêu tháng</h3></th>
-                </tr>
-                <tr>
-                    <th><input type="number" name="salary" id="salary" placeholder="Tiền lương" oninput="salarySubmit()"></th>
-                    <th><input type="number" name="spending" id="spending" placeholder="Số tiền chi tiêu"
-                               oninput="spendingSubmit()"></th>
-                </tr>
-            </table>
+        <table id="table1">
+            <tr>
+                <th><h3>Lương tháng</h3></th>
+                <th><h3>Hạn mức chi tiêu tháng</h3></th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="text" name="salary" id="salary" placeholder="Tiền lương" oninput="salarySubmit()">
+                </th>
+                <th>
+                    <input type="number" name="spending" id="spending" placeholder="Số tiền chi tiêu"
+                           oninput="spendingSubmit()">
+                </th>
+            </tr>
+        </table>
+        <br>
+        <h3>Mục đã chi tiêu</h3>
+        <div id="div4">
+            <input type="text" name="product" id="product" placeholder="Nội dung chi tiêu" style="width: 45%;">
+            <input type="number" name="amounts" id="amounts" placeholder="Số lượng" style="width: 10%;">
+            <input type="text" name="unit" id="unit" placeholder="Đơn vị" style="width: 10%;">
+            <input type="number" name="money" id="money" placeholder="Số tiền/1đv" style="width: 22%;">
+            <button onclick="addProduct()"> Thêm</button>
+        </div>
+        <hr>
+        <div id="div5">
+            <h3 align="center">Bảng thống kê chi tiêu</h3>
             <br>
-            <h3>Mục đã chi tiêu</h3>
-            <div id="div4">
-                <input type="text" name="product" id="product" placeholder="Nội dung chi tiêu" style="width: 50%;">
-                <input type="number" name="amounts" id="amounts" placeholder="Số lượng" style="width: 15%;">
-                <input type="number" name="money" id="money" placeholder="Số tiền đã chi" style="width: 22%;">
-                <button onclick="addProduct()"> Thêm </button>
-            </div>
-            <hr>
-            <div id="div5">
-                <h3 align="center">Bảng thống kê chi tiêu</h3>
-                <br>
-                <button onclick="resetBoard()" id="reset">Reset</button>
-                <h3 id="phai"><span id="amountsSpending"></span> Mục đã chi tiêu</h3>
-                <table id="table2">
-                    <thead>
-                        <th class="row1">Nội dung chi tiêu</th>
-                        <th class="row2">Số lượng</th>
-                        <th class="row3">Số tiền (/1)</th>
-                        <th class="row4"></th>
-                        <th class="row5"></th>
-                    </thead>
-                    <tbody id="resultproduct"></tbody>
-                </table>
-            </div>
+            <button onclick="resetBoard()" id="reset">Reset</button>
+            <h3 id="phai"><span id="amountsSpending"></span> Mục đã chi tiêu</h3>
+            <table id="table2">
+                <thead>
+                <th class="row1">Nội dung chi tiêu</th>
+                <th class="row2">Số lượng</th>
+                <th class="row6">Đơn vị</th>
+                <th class="row3">Số tiền (/1đv)</th>
+                <th class="row4"></th>
+                <th class="row5"></th>
+                </thead>
+                <tbody id="resultproduct"></tbody>
+            </table>
+        </div>
     </div>
 </div>
 </body>

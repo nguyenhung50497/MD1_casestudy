@@ -1,38 +1,40 @@
-body {
-    background-image: url("https://png.pngtree.com/background/20211215/original/pngtree-fresh-border-notebook-border-picture-image_1498041.jpg");
-    background-size: cover;
-    font-family: 'Mali', cursive;
-}
 header {
     width: 50%;
     margin: auto;
     margin-top: 80px;
 }
-h1, h3, .row1, .row2, .row3 {
+
+h1, h3, .row1, .row2, .row3, .row6 {
     color: indigo;
 }
+
 #content {
     width: 56%;
     margin-left: 16%;
-    height: 1500px;
+    height: 2000px;
 }
+
 #reset {
     float: left;
     margin-left: 50px;
 }
+
 #phai {
     width: 400px;
     float: right;
     text-align: right;
     margin-right: 50px;
 }
+
 h1 {
     text-align: center;
     font-size: 100px;
 }
+
 h2 {
     font-size: 40px;
 }
+
 input {
     width: 300px;
     height: 40px;
@@ -42,6 +44,7 @@ input {
     border: none;
     background-color: #b4ffe3;
 }
+
 button {
     width: 100px;
     height: 40px;
@@ -51,37 +54,50 @@ button {
     border-radius: 7px;
     border: none;
 }
+
 #table2 {
     width: 100%;
     text-align: center;
     font-size: 24px;
 }
+
 #table1 {
     width: 100%;
     font-size: 24px;
     text-align: center;
 }
-.row1, .row2, .row3, .row4, .row5 {
+
+.row1, .row2, .row3, .row4, .row5, .row6 {
     border: 2px solid white;
     border-collapse: collapse;
     background-color: bisque;
     border-radius: 5px;
 }
+
 .row1 {
-    width: 50%;
+    width: 42%;
 }
+
 .row2 {
-    width: 10%;
+    width: 9.5%;
 }
+
+.row6 {
+    width: 7.5%;
+}
+
 .row3 {
-    width: 20%;
+    width: 19%;
 }
+
 .row4 {
     width: 10%;
 }
+
 .row5 {
     width: 10%;
 }
+
 #aright {
     width: 500px;
     height: auto;
@@ -90,19 +106,22 @@ button {
     padding: 5px;
     margin-top: -25px;
 }
+
 #right {
     width: 440px;
     height: 250px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
+
 #divjs {
     width: 100%;
     height: 100%;
-    padding: 30px 30px 30px 30px;
+    padding: 20px 30px 30px 30px;
     border-radius: 20px;
     background-image: url("https://i.pinimg.com/originals/af/0b/a4/af0ba4ce1ac610da96b4b26fb52f87b7.jpg");
     background-size: cover;
 }
+
 #rightdowm {
     width: 440px;
     height: 440px;
@@ -112,6 +131,7 @@ button {
     background-size: cover;
     border-radius: 30px;
 }
+
 .money {
     border-radius: 5px;
     width: 230px;
@@ -120,15 +140,18 @@ button {
     background-color: white;
     font-size: 30px;
 }
+
 .table3 {
     border-radius: 5px;
     width: 320px;
     height: 50px;
     background-color: #b4b4b4;
 }
+
 #div4 {
     width: 100%;
 }
+
 #div5 {
     width: 100%;
     border-radius: 10px;
