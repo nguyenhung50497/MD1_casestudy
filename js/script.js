@@ -46,7 +46,7 @@ function addProduct() {
     document.querySelector('#spent').innerHTML = sumMoney;
     if (spending-sumMoney <= 0) {
         document.querySelector('#still').innerHTML = 0;
-        document.querySelector('#alert').innerHTML = 'Đã vượt quá hạn mức chi tiêu!!!';
+        document.querySelector('#alert').innerHTML = 'Đã vượt hạn mức chi tiêu!';
     }
     else {
         document.querySelector('#still').innerHTML = spending - sumMoney;
@@ -54,17 +54,16 @@ function addProduct() {
     }
     document.querySelector('#alert1').innerHTML = '';
     document.querySelector('#saveMoney').innerHTML = 0;
-    document.querySelector('#div2').innerHTML = '';
+    document.querySelector('#right').innerHTML = '';
 }
 
 function editProduct(inDex) {
     let str = '';
-    str = `<div style="width: 100%; height: 100%; border: 2px solid deepskyblue; background-color: wheat;
-           padding: 30px 40px 30px 40px; border-radius: 10px">
+    str = `<div id="divjs" style="">
            <table>
                <tr style="height: 40px">
                 <td><strong>Nội dung</strong></td>
-                <td><input type="text" id="editContent" value="` + lists[inDex] + `" style="border-radius: 5px; border: none; width: 400px"></td>
+                <td><input type="text" id="editContent" value="` + lists[inDex] + `" style="border-radius: 5px; border: none; width: 300px"></td>
                </tr>
                <tr style="height: 40px">
                 <td><strong>Số lượng</strong></td>
@@ -77,7 +76,7 @@ function editProduct(inDex) {
            </table>
            <br>
            <center><button onclick="saveProduct(` + inDex + `)">Save</button></div></center>`;
-    document.querySelector('#div2').innerHTML = str;
+    document.querySelector('#right').innerHTML = str;
 }
 
 function saveProduct(inDex) {
@@ -85,28 +84,31 @@ function saveProduct(inDex) {
     amounts[inDex] = document.querySelector('#editAmount').value;
     moneys[inDex] = document.querySelector('#editMoney').value;
     displayProduct();
-    document.querySelector('#div2').innerHTML = '';
+    document.querySelector('#right').innerHTML = '';
 }
 
 function deleteProduct(inDex) {
     lists.splice(inDex, 1);
     displayProduct();
     document.querySelector('#amountsSpending').innerHTML = lists.length;
-    document.querySelector('#div2').innerHTML = '';
+    document.querySelector('#right').innerHTML = '';
 }
 function settlement() {
     if (salary-sumMoney <= 0) {
         document.querySelector('#saveMoney').innerHTML = 0;
-        document.querySelector('#alert1').innerHTML = 'Bạn đã không tiết kiệm được tiền!!!';
+        document.querySelector('#alert1').innerHTML = 'Bạn không tiết kiệm được tiền!';
         document.querySelector('#alert').innerHTML = '';
     }
     else {
         document.querySelector('#saveMoney').innerHTML = salary - sumMoney;
         document.querySelector('#alert1').innerHTML = '';
     }
-    document.querySelector('#div2').innerHTML = '';
+    document.querySelector('#right').innerHTML = '';
 }
 function resetBoard() {
+    lists = [];
+    moneys = [];
+    amounts = [];
     document.querySelector('#resultproduct').innerHTML = '';
     document.querySelector('#spent').innerHTML = '';
     document.querySelector('#still').innerHTML = '';
@@ -115,6 +117,6 @@ function resetBoard() {
     document.querySelector('#alert1').innerHTML = '';
     document.querySelector('#salary').value = '';
     document.querySelector('#spending').value = '';
-    document.querySelector('#div2').innerHTML = '';
+    document.querySelector('#right').innerHTML = '';
 }
 

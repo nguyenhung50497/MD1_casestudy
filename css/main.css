@@ -1,16 +1,30 @@
-#div1 {
-    width: 1200px;
-    margin-top: 10px;
-    margin-left: 20px;
+body {
+    background-image: url("https://png.pngtree.com/background/20211215/original/pngtree-fresh-border-notebook-border-picture-image_1498041.jpg");
+    background-size: cover;
+    font-family: 'Mali', cursive;
 }
-#left {
-    width: 300px;
+header {
+    width: 50%;
+    margin: auto;
+    margin-top: 80px;
+}
+h1, h3, .row1, .row2, .row3 {
+    color: indigo;
+}
+#content {
+    width: 56%;
+    margin-left: 16%;
+    height: 1500px;
+}
+#reset {
     float: left;
+    margin-left: 50px;
 }
-#right {
+#phai {
     width: 400px;
     float: right;
     text-align: right;
+    margin-right: 50px;
 }
 h1 {
     text-align: center;
@@ -24,12 +38,15 @@ input {
     height: 40px;
     font-size: 20px;
     outline: none;
+    border-radius: 5px;
+    border: none;
+    background-color: #b4ffe3;
 }
 button {
     width: 100px;
     height: 40px;
     font-size: 24px;
-    background-color: #00a600;
+    background-color: #ffab0f;
     color: white;
     border-radius: 7px;
     border: none;
@@ -42,14 +59,13 @@ button {
 #table1 {
     width: 100%;
     font-size: 24px;
+    text-align: center;
 }
-.row1, .row2, .row3 {
-    border: 1px solid white;
+.row1, .row2, .row3, .row4, .row5 {
+    border: 2px solid white;
     border-collapse: collapse;
     background-color: bisque;
-}
-th {
-    background-color: white !important;
+    border-radius: 5px;
 }
 .row1 {
     width: 50%;
@@ -63,24 +79,38 @@ th {
 .row4 {
     width: 10%;
 }
-.row2 {
+.row5 {
     width: 10%;
 }
-#div2 {
-    width: 30%;
-    height: 240px;
-    margin-left: 67%;
-    margin-top: 0px;
+#aright {
+    width: 500px;
+    height: auto;
+    margin-left: 72%;
     position: fixed;
+    padding: 5px;
+    margin-top: -25px;
 }
-#div3 {
-    width: 30%;
-    height: 400px;
-    margin-left: 67%;
-    margin-top: 235px;
-    position: fixed;
-    text-align: center;
+#right {
+    width: 440px;
+    height: 250px;
+    margin-top: 20px;
+}
+#divjs {
+    width: 100%;
+    height: 100%;
+    padding: 30px 30px 30px 30px;
+    border-radius: 20px;
+    background-image: url("https://i.pinimg.com/originals/af/0b/a4/af0ba4ce1ac610da96b4b26fb52f87b7.jpg");
+    background-size: cover;
+}
+#rightdowm {
+    width: 440px;
+    height: 440px;
     padding: 20px;
+    text-align: center;
+    background-image: url("https://i.pinimg.com/originals/40/d5/8b/40d58b92b1ed8ab3e0e1d03a9138b70f.png");
+    background-size: cover;
+    border-radius: 30px;
 }
 .money {
     border-radius: 5px;
@@ -101,6 +131,5 @@ th {
 }
 #div5 {
     width: 100%;
-    background-color: #b4b4b4;
     border-radius: 10px;
 }
