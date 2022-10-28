@@ -57,17 +57,19 @@
             <br>
             <button style="width: 150px; height: 50px" onclick="settlement()">Quyết toán</button>
         </div>
-        <div id="right"></div>
+        <div id="right">
+            <div id="divjs"></div>
+        </div>
     </aside>
     <div id="content">
         <table id="table1">
             <tr>
-                <th><h3>Lương tháng</h3></th>
-                <th><h3>Hạn mức chi tiêu tháng</h3></th>
+                <th><h3><label for="salary">Lương tháng</label></h3></th>
+                <th><h3><label for="spending">Hạn mức chi tiêu tháng</label></h3></th>
             </tr>
             <tr>
                 <th>
-                    <input type="text" name="salary" id="salary" placeholder="Tiền lương" oninput="salarySubmit()">
+                    <input type="number" name="salary" id="salary" placeholder="Tiền lương" oninput="salarySubmit()">
                 </th>
                 <th>
                     <input type="number" name="spending" id="spending" placeholder="Số tiền chi tiêu"
@@ -76,7 +78,7 @@
             </tr>
         </table>
         <br>
-        <h3>Mục đã chi tiêu</h3>
+        <h3><label for="product">Mục đã chi tiêu</label></h3>
         <div id="div4">
             <input type="text" name="product" id="product" placeholder="Nội dung chi tiêu" style="width: 45%;">
             <input type="number" name="amounts" id="amounts" placeholder="Số lượng" style="width: 10%;">

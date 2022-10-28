@@ -7,13 +7,10 @@ let spending = 0;
 let sumMoney = 0;
 
 function salarySubmit() {
-    salary = document.querySelector('#salary').value;
+    salary = +document.querySelector('#salary').value;
     if (salary<0) {
         salary = -salary;
     }
-    // salary = salary.toLocaleString('vi', {style : 'currency', currency : 'VND'});
-    salary = salary.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    console.log(salary);
     document.querySelector('#salary').value = salary;
 }
 
@@ -24,8 +21,6 @@ function spendingSubmit() {
     }
 }
 
-salary = parseInt(salary);
-spending = parseInt(spending);
 function displayProduct() {
     let str = '';
     for (let i = 0; i < lists.length; i++) {
@@ -80,7 +75,7 @@ function addProduct() {
 
 function editProduct(inDex) {
     let str = '';
-    str = `<div id="divjs" style="">
+    str = `<div id="divjs">
            <table>
                <tr style="height: 40px">
                 <td><strong>Nội dung</strong></td>
@@ -103,8 +98,23 @@ function editProduct(inDex) {
                 <td><input type="number" id="editMoney" value="` + moneys[inDex] + `" style="border-radius: 5px; border: none; width: 250px"></td>
                </tr>
            </table>
-           <center><button onclick="saveProduct(` + inDex + `)">Save</button></div></center>`;
+           <center><button onclick="saveProduct(` + inDex + `)">Save</button></center>
+           </div>`;
     document.querySelector('#right').innerHTML = str;
+
+    let id = null;
+    const elem = document.getElementById("divjs");
+    let pos = 0;
+    clearInterval(id);
+    id = setInterval(frame, 1);
+    function frame() {
+        if (pos === -260) {
+            clearInterval(id);
+        } else {
+            pos--;
+            elem.style.top = pos + "px";
+        }
+    }
 }
 
 function saveProduct(inDex) {
@@ -159,4 +169,4 @@ function resetBoard() {
     document.querySelector('#saveMoney').innerHTML = '';
     document.querySelector('#still').innerHTML = '';
 }
-
+window.addEventListener()

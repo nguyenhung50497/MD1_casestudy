@@ -55,6 +55,14 @@ button {
     border: none;
 }
 
+button:hover {
+    background-color: #dac196;
+    color: crimson;
+}
+input:focus {
+    background-color: #bcd2fc;
+}
+
 #table2 {
     width: 100%;
     text-align: center;
@@ -111,6 +119,7 @@ button {
     width: 440px;
     height: 250px;
     margin-top: 15px;
+    position: absolute;
 }
 
 #divjs {
@@ -120,6 +129,8 @@ button {
     border-radius: 20px;
     background-image: url("https://i.pinimg.com/originals/af/0b/a4/af0ba4ce1ac610da96b4b26fb52f87b7.jpg");
     background-size: cover;
+    position: absolute;
+    margin-top: 700px;
 }
 
 #rightdowm {
@@ -130,6 +141,7 @@ button {
     background-image: url("https://i.pinimg.com/originals/40/d5/8b/40d58b92b1ed8ab3e0e1d03a9138b70f.png");
     background-size: cover;
     border-radius: 30px;
+    position: absolute;
 }
 
 .money {
@@ -137,7 +149,7 @@ button {
     width: 230px;
     height: 35px;
     margin: 10px;
-    background-color: white;
+    background-color: bisque;
     font-size: 30px;
 }
 
