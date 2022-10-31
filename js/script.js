@@ -17,9 +17,18 @@ function salarySubmit() {
 function spendingSubmit() {
     spending = +document.querySelector('#spending').value;
     if (spending<0) {
-        document.querySelector('#spending').value = -spending;
+        spending = -spending;
     }
+    document.querySelector('#spending').value = spending;
 }
+
+// let salary1 = document.getElementById("salary");
+// salary1.addEventListener('keyup', function(evt){
+//     var n = parseInt(this.value.replace(/\D/g,''),10);
+//     salary1.value = n.toLocaleString();
+// }, false);
+
+console.log(salary);
 
 function displayProduct() {
     let str = '';
@@ -79,48 +88,34 @@ function editProduct(inDex) {
            <table>
                <tr style="height: 40px">
                 <td><strong>Nội dung</strong></td>
-                <td><input type="text" id="editContent" value="` + lists[inDex] + `" style="border-radius: 5px; border: none; width: 300px"></td>
+                <td><input type="text" id="editContent" value="` + lists[inDex] + `" style="border-radius: 5px; width: 300px"></td>
                </tr>
                <tr style="height: 40px">
                 <td><strong>Số lượng</strong></td>
                 <td>
-                    <input type="number" id="editAmount" value="` + amounts[inDex] + `" style="border-radius: 5px; border: none; width: 150px">
+                    <input type="number" id="editAmount" value="` + amounts[inDex] + `" style="border-radius: 5px; width: 150px">
                 </td>
                </tr>
                <tr style="height: 40px">
                 <td><strong>Đơn vị</strong></td>
                 <td>
-                    <input type="text" id="editUnit" value="` + units[inDex] + `" style="border-radius: 5px; border: none; width: 150px">
+                    <input type="text" id="editUnit" value="` + units[inDex] + `" style="border-radius: 5px; width: 150px">
                 </td>
                </tr>
                <tr style="height: 40px">
                 <td><strong>Số tiền</strong></td>
-                <td><input type="number" id="editMoney" value="` + moneys[inDex] + `" style="border-radius: 5px; border: none; width: 250px"></td>
+                <td><input type="number" id="editMoney" value="` + moneys[inDex] + `" style="border-radius: 5px; width: 250px"></td>
                </tr>
            </table>
            <center><button onclick="saveProduct(` + inDex + `)">Save</button></center>
            </div>`;
     document.querySelector('#right').innerHTML = str;
-
-    let id = null;
-    const elem = document.getElementById("divjs");
-    let pos = 0;
-    clearInterval(id);
-    id = setInterval(frame, 1);
-    function frame() {
-        if (pos === -260) {
-            clearInterval(id);
-        } else {
-            pos--;
-            elem.style.top = pos + "px";
-        }
-    }
 }
 
 function saveProduct(inDex) {
     lists[inDex] = document.querySelector('#editContent').value;
-    amounts[inDex] = document.querySelector('#editAmount').value;
-    moneys[inDex] = document.querySelector('#editMoney').value;
+    amounts[inDex] = +document.querySelector('#editAmount').value;
+    moneys[inDex] = +document.querySelector('#editMoney').value;
     units[inDex] = document.querySelector('#editUnit').value;
     displayProduct();
     document.querySelector('#right').innerHTML = '';
