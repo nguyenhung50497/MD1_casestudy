@@ -8,7 +8,7 @@ let sumMoney = 0;
 
 function salarySubmit() {
     salary = +document.querySelector('#salary').value;
-    if (salary<0) {
+    if (salary < 0) {
         salary = -salary;
     }
     document.querySelector('#salary').value = salary;
@@ -16,17 +16,11 @@ function salarySubmit() {
 
 function spendingSubmit() {
     spending = +document.querySelector('#spending').value;
-    if (spending<0) {
+    if (spending < 0) {
         spending = -spending;
     }
     document.querySelector('#spending').value = spending;
 }
-
-// let salary1 = document.getElementById("salary");
-// salary1.addEventListener('keyup', function(evt){
-//     var n = parseInt(this.value.replace(/\D/g,''),10);
-//     salary1.value = n.toLocaleString();
-// }, false);
 
 console.log(salary);
 
@@ -37,7 +31,7 @@ function displayProduct() {
                 <td class="row1">${lists[i]}</td>
                 <td class="row2">${amounts[i]}</td>
                 <td class="row6">${units[i]}</td>
-                <td class="row3">${moneys[i].toLocaleString('vi', {style : 'currency', currency : 'VND'})}</td>
+                <td class="row3">${moneys[i].toLocaleString('vi', {style: 'currency', currency: 'VND'})}</td>
                 <td class="row4"><button onclick="editProduct(` + i + `)">Sửa</button></td> 
                 <td class="row5"><button onclick="deleteProduct(` + i + `)">Xóa</button></td>
                 </tr>`;
@@ -65,17 +59,23 @@ function addProduct() {
     for (let i = 0; i < moneys.length; i++) {
         sumMoney += (moneys[i] * amounts[i]);
     }
-    document.querySelector('#spent').innerHTML = sumMoney.toLocaleString('vi', {style : 'currency', currency : 'VND'});
+    document.querySelector('#spent').innerHTML = sumMoney.toLocaleString('vi', {style: 'currency', currency: 'VND'});
     if (sumMoney > 0) {
         if (spending - sumMoney <= 0) {
             document.querySelector('#still').innerHTML = 0;
             document.querySelector('#alert').innerHTML = 'Đã vượt hạn mức chi tiêu!';
         } else {
-            document.querySelector('#still').innerHTML = (spending - sumMoney).toLocaleString('vi', {style : 'currency', currency : 'VND'});
+            document.querySelector('#still').innerHTML = (spending - sumMoney).toLocaleString('vi', {
+                style: 'currency',
+                currency: 'VND'
+            });
             document.querySelector('#alert').innerHTML = '';
         }
     } else {
-        document.querySelector('#still').innerHTML = spending.toLocaleString('vi', {style : 'currency', currency : 'VND'});
+        document.querySelector('#still').innerHTML = spending.toLocaleString('vi', {
+            style: 'currency',
+            currency: 'VND'
+        });
     }
     document.querySelector('#alert1').innerHTML = '';
     document.querySelector('#saveMoney').innerHTML = 0;
@@ -84,7 +84,11 @@ function addProduct() {
 
 function editProduct(inDex) {
     let str = '';
-    str = `<div id="divjs">
+    str = `<div id="divjs" style="width: 100%;
+            height: 100%;
+            padding: 20px 30px 30px 30px;
+            border-radius: 20px;
+            ">
            <table>
                <tr style="height: 40px">
                 <td><strong>Nội dung</strong></td>
@@ -135,12 +139,18 @@ function settlement() {
             document.querySelector('#alert1').innerHTML = 'Bạn không tiết kiệm được tiền!';
             document.querySelector('#alert').innerHTML = '';
         } else {
-            document.querySelector('#saveMoney').innerHTML = (salary - sumMoney).toLocaleString('vi', {style : 'currency', currency : 'VND'});
+            document.querySelector('#saveMoney').innerHTML = (salary - sumMoney).toLocaleString('vi', {
+                style: 'currency',
+                currency: 'VND'
+            });
             document.querySelector('#alert1').innerHTML = '';
         }
         document.querySelector('#right').innerHTML = '';
     } else {
-        document.querySelector('#saveMoney').innerHTML = salary.toLocaleString('vi', {style : 'currency', currency : 'VND'});
+        document.querySelector('#saveMoney').innerHTML = salary.toLocaleString('vi', {
+            style: 'currency',
+            currency: 'VND'
+        });
     }
 }
 
@@ -164,4 +174,5 @@ function resetBoard() {
     document.querySelector('#saveMoney').innerHTML = '';
     document.querySelector('#still').innerHTML = '';
 }
+
 window.addEventListener()
